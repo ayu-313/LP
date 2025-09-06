@@ -35,14 +35,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ヘッダーのスクロール効果
+// ヘッダーのスクロール効果（背景は常にオレンジ、影のみ変化）
+const rootStyles = getComputedStyle(document.documentElement);
+const PRIMARY_COLOR = rootStyles.getPropertyValue('--primary-color').trim() || '#FF7A00';
+
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
+    if (!header) return;
+    header.style.backgroundColor = PRIMARY_COLOR;
     if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
     } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
         header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
     }
 });
@@ -213,8 +216,8 @@ notificationStyles.textContent = `
     }
     
     .nav-link.active {
-        color: var(--primary-color);
-        font-weight: 600;
+        color: #ffffff;
+        font-weight: 700;
     }
     
     .nav-link.active::after {

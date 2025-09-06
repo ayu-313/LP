@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="64" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .word { font: 700 32px 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; }
+    .sub { font: 600 14px 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; }
+  </style>
+  <!-- Transparent background, white lettering for orange header -->
+  <g>
+    <text x="0" y="36" class="word" fill="#FFFFFF">AreYoU</text>
+    <text x="0" y="56" class="sub" fill="#FFFFFF">タイ古式マッサージ</text>
+  </g>
+</svg>
