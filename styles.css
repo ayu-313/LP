@@ -143,9 +143,11 @@ body {
     gap: 12px;
 }
 
-.brand-text { /* スクリーンリーダー用の補助テキストを視覚的に控えめに */
-    position: absolute;
-    left: -9999px;
+.brand-text-visible {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .nav-menu {
@@ -845,5 +847,55 @@ body {
     body {
         font-size: 12pt;
         line-height: 1.4;
+    }
+}
+
+/* 右上固定画像 */
+.corner-image {
+    position: absolute;
+    top: 90px; /* ヘッダーの下に配置 */
+    right: 0;
+    z-index: 1100; /* ヘッダーより上 */
+    display: block;
+    width: 70vw; /* 画面幅の70% */
+    height: 70vh; /* 画面高さの70% */
+}
+
+.corner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .corner-image {
+        position: absolute;
+        top: 88px; /* モバイル時のヘッダー下 */
+        right: 0;
+        width: 65vw; /* モバイルでも大きく */
+        height: 60vh;
+    }
+    .corner-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+/* さらに小さい端末向け最適化 */
+@media (max-width: 480px) {
+    .corner-image {
+        top: 88px;
+        right: 0;
+        width: 85vw; /* 画面幅の85%に調整 */
+        height: 45vh; /* 高さを抑える */
+        z-index: 800; /* ヘッダー(1000)より下にして重なりを回避 */
+    }
+    .hero-title {
+        font-size: 1.9rem; /* タイトルをやや小さく */
+    }
+    .hero-subtitle {
+        font-size: 0.95rem;
     }
 }
